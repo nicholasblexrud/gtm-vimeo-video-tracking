@@ -1,4 +1,15 @@
 # Vimeo tracking in Google Tag Manager
+This script is derived from [Tracking Video with Google Analytics Part 2 of 3: Vimeo Edition](http://eroi.com/ideas/tracking-video-with-google-analytics-part-2-of-3-vimeo-edition/) and [Sander Heilbron](https://www.sanderheilbron.nl/) script.
+
+What this script will give you in your Google Analytics Reports:
+
+  * Video Starts
+  * Video Pauses (will only send once)
+  * Video Resumes (will only send once)
+  * Video Seeks (will only send once)
+  * Video Progress: 25%, 50%, 75%
+  * Video Completions
+
 
 ## Enabling tracking for Vimeo videos
 To enabled us to listen to Vimeo’s API messages, we must add a parameter to all Vimeo `iframe src` values: `?api=1` or `&api=1`, depending on if there are additonal parameters.
@@ -50,4 +61,5 @@ Notes:
       * Select `More` under Fire On selection, and select `trackVimeo` Custom Event.
 
 ## Caveats/TODOs:
-  * At this moment, the script only handles one video per page. I looked into providing coverage for multiple videos, but couldn't find an effective/simple way to handle multiple `postMessages` between multiple videos.
+  * At this moment, the script only handles one video per page. I looked into providing coverage for multiple videos, but couldn't find an effective/simple way to handle multiple `postMessages`.
+  * [According to Vimeo developers](https://github.com/vimeo/player-api/issues/82), there is talk of a new verions of the Froogaloop library getting released early 2016. I'm not sure if they are changing the  Vimeo JavaScript API all together or just the Froogaloop library, so I likely won't be doing any further development on this until after they release new lib.
